@@ -1,0 +1,10 @@
+ .warning{
+  padding:10px;
+  background-color:green;
+  border:1px solid red;
+}
+
+.white-text
+{
+ color:white;
+}
