@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ShoppingListService } from './../shopping-list.service';
 
 import { Ingredient } from './../../shared/ingredients.model';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { format } from 'path';
+
+
 
 @Component({
   selector: 'app-shopping-edit',

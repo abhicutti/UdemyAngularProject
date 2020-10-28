@@ -1,12 +1,8 @@
+import { AuthService } from './auth/auth.service';
 
-import { DataStorageService } from './shared/data-storage.service';
-import { CustomValidators } from './custom.validators';
-import { Subscription, Observable } from 'rxjs';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeService } from './recipe/recipe.service';
-import { UserService } from './users.services';
+
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import {CounterService} from './counter.service';
+
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { title } from 'process';
 import {HttpClient} from '@angular/common/http';
@@ -21,13 +17,16 @@ import {HttpClient} from '@angular/common/http';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [UserService, CounterService, RecipeService, ShoppingListService,DataStorageService]
+  providers: []
 })
 export class AppComponent  implements OnInit{
-
-ngOnInit()
+constructor(private authservice:AuthService)
 {
 
+}
+ngOnInit()
+{
+this.authservice.autoLogin();
 }
 
 

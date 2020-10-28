@@ -61,20 +61,22 @@ if (recipe['Ingredient']) {
   }
 
 
+
+
+}
 this.recipeForm = new FormGroup({
   'name': new FormControl(recipeName,Validators.required),
-    'imagePath': new FormControl(recipeImagepath,Validators.required),
+    'imagepath': new FormControl(recipeImagepath,Validators.required),
     'description' : new FormControl(recipeDescription,Validators.required),
     'ingredients': recipeIngredients
 });
-
-}
 }
 
 get controls() { // a getter!
   this.recipeForm.get('ingredients');
 
   return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  //return (this.recipeForm.get('ingredients') as FormArray).controls;
 
 }
 onSubmit()
